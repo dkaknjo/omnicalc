@@ -1,8 +1,8 @@
 class CalculationsController < ApplicationController
 
   def word_count
-    @text = params[:user_text].gsub(")/[^a-z0-9\s]/i","").downcase
-    @special_word = params[:user_word].gsub(")/[^a-z0-9\s]/i","").downcase
+    @text = params[:user_text].gsub(",","").gsub(".","").gsub(";","").downcase
+    @special_word = params[:user_word].gsub(",","").gsub(".","").gsub(";","").downcase
 
     # ================================================================================
     # Your code goes below.
