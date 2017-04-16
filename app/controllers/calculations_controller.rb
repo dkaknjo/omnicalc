@@ -10,8 +10,9 @@ class CalculationsController < ApplicationController
     # The special word the user input is in the string @special_word.
     # ================================================================================
 
+    text_split_into_array = @text.split
 
-    @word_count = "Replace this string with your answer."
+    @word_count = text_split_into_array.length
 
     @character_count_with_spaces = "Replace this string with your answer."
 
