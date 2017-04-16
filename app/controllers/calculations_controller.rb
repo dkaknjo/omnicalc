@@ -1,8 +1,8 @@
 class CalculationsController < ApplicationController
 
   def word_count
-    @text = params[:user_text]
-    @special_word = params[:user_word]
+    @text = params[:user_text].downcase
+    @special_word = params[:user_word].downcase
 
     # ================================================================================
     # Your code goes below.
@@ -18,7 +18,7 @@ class CalculationsController < ApplicationController
 
     @character_count_without_spaces = @text.gsub(" ","").length
 
-    @occurrences = @special_word.split.length
+    @occurrences = text_split_into_array.count(@special_word)
 
     # ================================================================================
     # Your code goes above.
